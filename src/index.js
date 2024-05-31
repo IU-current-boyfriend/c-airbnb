@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import '@/assets/css/index.less';
+import "normalize.css";
 import App from './App';
 import theme from './assets/theme';
 import store from '@/store';

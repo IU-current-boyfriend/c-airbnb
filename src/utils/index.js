@@ -9,3 +9,13 @@ export const collectNames = (data, key) => {
 export const isEmptyObject = (object) => {
   return Object.keys(object).length > 0;
 }
+
+export const combineMessages = messagesArr => {
+  if (!Array.isArray(messagesArr)) return;
+  return messagesArr.join('·');
+}
+
+export const combineRoomPrice = price => {
+  if (!price) return;
+  return `¥${price}/晚`;
+} 

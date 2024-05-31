@@ -15,15 +15,20 @@ module.exports = {
           lessOptions: {
             modifyVars: { '@primary-color': '#1DA57A' },
             javascriptEnabled: true,
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   ],
   webpack: {
     alias: {
       '@': resolve('src'),
-      'components': resolve('components'),
+      'components': resolve('src/components'),
+      /**
+       * 这里面有个坑，就是@mui/material安装的时候，官网说明使用styled-components的方式不对，还需要安装@emotion/react @emotion/styled这两个依赖
+       * 而且，不需要设置下面的配置
+       */
+      // '@mui/styled-engine': '@mui/styled-engine-sc'
     }
   }
 }
