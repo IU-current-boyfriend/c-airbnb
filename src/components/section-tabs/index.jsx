@@ -2,6 +2,7 @@ import { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SectionTabsWarpper } from './style';
+import ScrollView from '@/base-ui/scorll-view';
 
 
 
@@ -16,7 +17,7 @@ const SectionTabs = memo((props) => {
 
   return (
     <SectionTabsWarpper>
-      <div className='nav-city-container'>
+      <ScrollView>
         {
           tabNames && tabNames.map((name, index) => (
             <div
@@ -28,7 +29,7 @@ const SectionTabs = memo((props) => {
             </div>
           ))
         }
-      </div>
+      </ScrollView>
     </SectionTabsWarpper>
   );
 });

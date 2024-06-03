@@ -4,12 +4,12 @@ import { SectionRoomsWarpper } from './style';
 import RoomItem from '@/components/room-item';
 
 const SectionRooms = memo((props) => {
-  const { roomList } = props;
+  const { roomList, itemWidth } = props;
   return (
     <SectionRoomsWarpper>
       {
         roomList && roomList.map(room => (
-          <RoomItem roomInfo={room} key={room.id} />
+          <RoomItem roomInfo={room} key={room.id} itemWidth={itemWidth} />
         ))
       }
     </SectionRoomsWarpper>
@@ -17,7 +17,8 @@ const SectionRooms = memo((props) => {
 });
 
 SectionRooms.propType = {
-  roomList: PropType.array
+  roomList: PropType.array,
+  itemWidth: PropType.string
 }
 
 export default SectionRooms;

@@ -5,6 +5,7 @@ import { collectNames } from '@/utils';
 import SectionHeader from '@/components/section-header';
 import SectionTabs from '@/components/section-tabs';
 import SectionRooms from '@/components/section-rooms';
+import SectionMore from '@/components/section-more';
 
 const HomeSectionV1 = memo((props) => {
   const { dataInfo } = props;
@@ -20,6 +21,7 @@ const HomeSectionV1 = memo((props) => {
       <SectionHeader subtitle={subtitle} title={title} />
       <SectionTabs tabNames={tabNames} tabClick={navCityHandleClick} />
       <SectionRooms roomList={dest_list[name]} />
+      <SectionMore name={name} />
     </HomeSectionWarpper>
   );
 });

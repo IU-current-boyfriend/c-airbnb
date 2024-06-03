@@ -10,6 +10,11 @@ export const isEmptyObject = (object) => {
   return Object.keys(object).length > 0;
 }
 
+export const isEmptyArray = (arr) => {
+  if (!Array.isArray(arr)) return;
+  return arr.length <= 0;
+}
+
 export const combineMessages = messagesArr => {
   if (!Array.isArray(messagesArr)) return;
   return messagesArr.join('·');

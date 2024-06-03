@@ -6,7 +6,6 @@ import { RoomRatingWarpper } from './style';
 const RoomRating = memo(props => {
   const { roomInfo } = props;
   const { star_rating, star_rating_color } = roomInfo;
-  console.log('start:=>', star_rating, star_rating_color);
   return (
     <RoomRatingWarpper>
       <Rating

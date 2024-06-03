@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 
 export const SectionTabsWarpper = styled.div`
-  .nav-city-container {
-    display: flex;
+  padding-left: 8px;
     .nav-city {
-      /* flex-basis: 120px; */
-      /* flex-shrink: 0; */
+      flex-basis: 120px;
+      flex-shrink: 0;
       padding: 14px 16px;
       margin-right: 16px;
       border-radius: 3px;
@@ -14,8 +13,9 @@ export const SectionTabsWarpper = styled.div`
       text-align: center;
       border: .5px solid #D8D8D8;
       white-space: nowrap;
+      box-sizing: border-box;
       cursor: pointer;
-      ${props => props.theme.mixin.boxShadow}
+      ${props => props.theme.mixin.boxShadowHover}
       &:last-child {
         margin-right: 0;
       }
@@ -24,5 +24,4 @@ export const SectionTabsWarpper = styled.div`
         background-color: ${props => props.theme.color.secondaryColor};
       }
     }
-  }
 `;
