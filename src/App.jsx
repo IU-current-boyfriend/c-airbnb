@@ -4,6 +4,7 @@ import routes from './router';
 import PageHeader from './components/page-header';
 import PageFooter from './components/page-footer';
 import PageFooterData from '@/assets/data/footer.json';
+import SectionLoading from './components/section-loading';
 import { AppWarpper } from './style';
 
 const App = memo(() => {
@@ -11,7 +12,7 @@ const App = memo(() => {
     <AppWarpper>
       <PageHeader />
       <div className='app-content'>
-        <Suspense fallback={<div>loading....</div>}>
+        <Suspense fallback={<SectionLoading />}>
           {
             useRoutes(routes)
           }

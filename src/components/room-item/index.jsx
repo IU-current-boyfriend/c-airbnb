@@ -7,12 +7,19 @@ import RoomDescInfo from '@/components/room-desc-info';
 import RoomRating from '@/components/room-rating';
 import RoomReview from '@/components/room-review';
 import RoomPhotoInfo from '@/components/room-photo';
+import RoomCarouselPhoto from '@/components/room-carousel-photo';
 
 const RoomItem = memo((props) => {
   const { roomInfo, itemWidth } = props;
+  const { picture_urls } = roomInfo;
   return (
     <RoomItemWarpper itemWidth={itemWidth ?? '33.33%'}>
-      {isEmptyObject(roomInfo) && <RoomPhotoInfo roomInfo={roomInfo} />}
+      {/* 这个地方有意思，可以只展示图片，可以展示轮播图 */}
+      {
+        picture_urls
+          ? (isEmptyObject(roomInfo) && <RoomCarouselPhoto pictureUrls={picture_urls} />)
+          : (isEmptyObject(roomInfo) && <RoomPhotoInfo roomInfo={roomInfo} />)
+      }
       {isEmptyObject(roomInfo.verify_info) && <RoomVerifyInfo verifyInfo={roomInfo.verify_info} />}
       {isEmptyObject(roomInfo) && <RoomDescInfo descInfo={roomInfo} />}
       <RoomRatingReviewWarpper>
